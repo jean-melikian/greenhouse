@@ -1,5 +1,6 @@
 ## PROJECT SPECIFIC EXCLUSIONS ######################
 .idea
+!/bin
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Linux template
