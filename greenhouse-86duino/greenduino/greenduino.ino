@@ -1,24 +1,34 @@
+/*
+ * Links:
+ * https://www.carnetdumaker.net/articles/utiliser-des-leds-rgb-avec-une-carte-arduino-genuino/
+ */
+
 #include <Ethernet.h>
 
 #define WDWAIT      20000  // Timeout de reponse serveur IoT
 #define WDREAD      5000   // Timeout de lecture serveur IoT
-#define REQUEST_INTERVAL 30
+#define REQUEST_INTERVAL 5 // in seconds
 
 #define MAX_RESPONSE  1024
 
-// SENSORS
-int humidity = 0;
-
 // PINS
 // ANALOG
-const int HYGROMETER = A0; // soil humidity
-// DIGITAL
-const int L1 = 3;
+const int PIN_SENSOR_HYGROMETER = A0; // soil humidity
+const int PIN_SENSOR_LUX = A1; // luminosity
+// PWM
+const int PIN_LED_R = 9;
+const int PIN_LED_G = 10;
+const int PIN_LED_B = 11;
 
+// SENSORS VALUES
+int humidity = 0;
+int luminosity = 0;
+
+// NETWORK INTERFACE CLIENT
 EthernetClient client;
 
 // API CONFIGURATION
-const char* server = "192.168.2.1";
+const char* server = "192.168.1.14";
 int port = 3000;
 
 // ROUTES
@@ -28,19 +38,30 @@ const char *table_name = "sensors";
 char buffer[64];
 char response[MAX_RESPONSE];
 
+// -------------------------------------------------------------------
+// -- BEGINNING OF THE CODE ------------------------------------------
+
+// INITIALIZATION, executed only once
 void setup() {
   Serial.begin(9600);
-  pinMode(HYGROMETER, INPUT); // soil  humidity
-  pinMode(L1, OUTPUT); // LED 1
+  pinMode(PIN_SENSOR_HYGROMETER, INPUT); // soil  humidity
+  pinMode(PIN_SENSOR_LUX, INPUT); // luminosity
+  pinMode(PIN_LED_R, OUTPUT); // RGB LED -> R
+  pinMode(PIN_LED_G, OUTPUT); // RGB LED -> G
+  pinMode(PIN_LED_B, OUTPUT); // RGB LED -> B
+  displayColor(255,0,0);
   Serial.println("Initializing Ethernet...");
   Ethernet.begin();
   Serial.println("Ethernet shield is ready !");
+  displayColor(0,255,0);
 }
 
-
+// MAIN CODE
 void loop() {
 
-  humidity = analogRead(HYGROMETER);
+  humidity = analogRead(PIN_SENSOR_HYGROMETER);
+  luminosity = analogRead(PIN_SENSOR_LUX);
+  
   /*
   Serial.print(humidity); Serial.print(" - ");
   
@@ -59,13 +80,28 @@ void loop() {
   */
   Serial.print("Hygrometer ");
   Serial.println(humidity);
-  digitalWrite(L1, LOW);
   Trace_Sensor(humidity);
-  delay(1000*REQUEST_INTERVAL);  // 30 sev
-  //digitalWrite(L1, LOW);
+  //displayColor(255, 0, 0);
+  delay(1000*REQUEST_INTERVAL);
+  
+  //digitalWrite(R, LOW);
+}
+
+//////////////////////// LEDs ////////////////////
+void displayColor(byte r, byte g, byte b) {
+  // As we are using a common cathod LED, we have to invert the bytes values to get the color we want
+  // '~' inverts each of the word's bits, for example:
+  // ~r == 255-r
+  // OR
+  // ~0b101 == 0b010
+  analogWrite(PIN_LED_R, r);
+  analogWrite(PIN_LED_G, g);
+  analogWrite(PIN_LED_B, b);
 }
 
 //////////////////////// NETWORK /////////////////
+
+
 
 // Envoi d'un TOP cycle
 void Trace_Sensor(int value)
