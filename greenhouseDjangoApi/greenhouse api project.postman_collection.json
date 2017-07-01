@@ -1,0 +1,236 @@
+{
+	"id": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+	"name": "greenhouse api project",
+	"description": "Collection to test our Api Green house",
+	"order": [],
+	"folders": [
+		{
+			"id": "9ef91774-2cfe-40f3-72e7-0ea4061b59ca",
+			"name": "Auth",
+			"description": "",
+			"order": [
+				"9d275afa-6106-c4ec-f6a5-255143df5cd0"
+			],
+			"owner": "2070164"
+		},
+		{
+			"id": "0817809f-a385-6cc1-3344-7afee3d3ff01",
+			"name": "Sensors Entry",
+			"description": "",
+			"order": [
+				"b741ab84-ed09-7f19-ae9a-87f6e414221f",
+				"d091821a-0870-2275-abd7-d7f0a598b30e",
+				"73bf9c55-6fd6-877c-e179-46106a96a6b1",
+				"5cb0b661-b1e0-7c84-e7e8-7b03be8e6abe",
+				"4c895c1d-c5cf-8f21-ffea-50a3502a4132"
+			],
+			"owner": "2070164"
+		}
+	],
+	"timestamp": 1498918475810,
+	"owner": "2070164",
+	"public": false,
+	"requests": [
+		{
+			"id": "4c895c1d-c5cf-8f21-ffea-50a3502a4132",
+			"headers": "Authorization: Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/sensorsEntry",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET SENSORS ENTRIES BY ID",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1498921666828,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "d091821a-0870-2275-abd7-d7f0a598b30e",
+			"folder": "0817809f-a385-6cc1-3344-7afee3d3ff01"
+		},
+		{
+			"id": "5cb0b661-b1e0-7c84-e7e8-7b03be8e6abe",
+			"headers": "Content-Type: application/json\nAuthorization: Basic d6f88d6ad3124aac654ae971e05a53aa2fd8f9af53aa9d1f5bf83952c29c858f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic d6f88d6ad3124aac654ae971e05a53aa2fd8f9af53aa9d1f5bf83952c29c858f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/sensorsEntry/1/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498922739124,
+			"name": "UPDATE A SENSOR ENTRY copy",
+			"description": "",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"responses": [],
+			"rawModeData": "{\n\t\"entry_date\" : \"01/07/2017\",\n\t\"entry_temperature\" : \"40\",\n\t\"entry_hydro\" : \"1000\"\n}"
+		},
+		{
+			"id": "73bf9c55-6fd6-877c-e179-46106a96a6b1",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/sensorsEntry/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"data": [],
+			"dataMode": "raw",
+			"name": "DELETE A SENSOR ENTRY",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1498922371951,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "0817809f-a385-6cc1-3344-7afee3d3ff01",
+			"rawModeData": ""
+		},
+		{
+			"id": "9d275afa-6106-c4ec-f6a5-255143df5cd0",
+			"headers": "Authorization: Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498921762516,
+			"name": "Login",
+			"description": "",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "b741ab84-ed09-7f19-ae9a-87f6e414221f",
+			"headers": "Content-Type: application/json\nAuthorization: Basic d6f88d6ad3124aac654ae971e05a53aa2fd8f9af53aa9d1f5bf83952c29c858f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic d6f88d6ad3124aac654ae971e05a53aa2fd8f9af53aa9d1f5bf83952c29c858f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/sensorsEntry/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498922730117,
+			"name": "POST SENSOR ENTRY",
+			"description": "",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"responses": [],
+			"rawModeData": "{\n\t\"entry_date\" : \"\",\n\t\"entry_hydro\" : \"1567\",\n\t\"entry_temperature\" : \"38\"\n}"
+		},
+		{
+			"id": "d091821a-0870-2275-abd7-d7f0a598b30e",
+			"headers": "Authorization: Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YW50b2luZXBlbGxldGllcjpCZWRtYXI2MFJ5bw==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8000/greenhouseApp/sensorsEntry",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498922754590,
+			"name": "GET SENSORS ENTRIES",
+			"description": "",
+			"collectionId": "4839b4f7-5768-a9b9-a3da-6c3bea771206",
+			"responses": []
+		}
+	]
+}
