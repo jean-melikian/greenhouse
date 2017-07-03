@@ -1,3 +1,6 @@
 [submodule "api"]
 	path = api
 	url = git@github.com:ozonePowered/greenhouse-api.git
+[submodule "greenhouse-iot"]
+	path = greenhouse-iot
+	url = git@github.com:ozonePowered/greenhouse-iot.git
