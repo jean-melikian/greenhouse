@@ -1,0 +1,151 @@
+{
+	"variables": [],
+	"info": {
+		"name": "greenhouse-iot",
+		"_postman_id": "872b72a7-271e-47a7-98d9-7367401fb6c0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/sensors",
+			"request": {
+				"url": "{{host}}/sensors",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"soil_humidity\": \"1023\",\n  \"luminosity\": \"1023\",\n  \"air_humidity\": \"20.5\",\n  \"temperature\": \"24.2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/sensors",
+			"request": {
+				"url": "{{host}}/sensors",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"msg\": \"Hello\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/sensors/:id",
+			"request": {
+				"url": "{{host}}/sensors/595eaf31bbad229be48b466c",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"msg\": \"Hello\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/sensors?sincetime=1499440894",
+			"request": {
+				"url": {
+					"raw": "{{host}}/sensors?sincetime=1499550544&untiltime=1499551091",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sensors"
+					],
+					"query": [
+						{
+							"key": "sincetime",
+							"value": "1499550544",
+							"equals": true,
+							"description": "Timestamp de début de l'intervalle"
+						},
+						{
+							"key": "untiltime",
+							"value": "1499551091",
+							"equals": true,
+							"description": "Timestamp de fin de l'intervalle"
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"msg\": \"Hello\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/sensors?types=hygrometer,luminosity",
+			"request": {
+				"url": {
+					"raw": "{{host}}/sensors?types=temperature,soil_humidity",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sensors"
+					],
+					"query": [
+						{
+							"key": "types",
+							"value": "temperature,soil_humidity",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"msg\": \"Hello\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
