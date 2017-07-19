@@ -2,8 +2,8 @@
 
 ## Participants
 
-- Jean-Christophe MELIKIAN
-- Antoine PELLETIER
+- Jean-Christophe MELIKIAN [@ozonePowered](https://github.com/ozonePowered)
+- Antoine PELLETIER [@antoineteuz](https://github.com/antoineteuz)
 
 Les projets android et api utilisent des fichiers de configuration de services Google pour Firebase.
 Ils ne sont pas présent dans les dépôts car ces derniers sont publics.
